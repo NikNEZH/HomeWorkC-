@@ -3,13 +3,19 @@
 
 // [3 7 22 2 78] -> 76
 
+double Random () 
+{
+    Random rand = new Random();
+    double result = rand.Next(1, 100) + rand.NextDouble();
+    return result;
+}
+
 double[] InitArray(int n) 
 {
     double[] array = new double[n];
-    Random rand = new Random();
     for (int i = 0; i < array.Length; i++) 
     {
-    array[i] = rand.Next(1, 100) + rand.NextDouble();
+    array[i] = Random ();
     array[i] = Math.Round(array[i], 2);
     Console.Write($"{array[i]} ");
     } 
